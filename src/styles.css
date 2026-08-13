@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* =========================
+   VARIÁVEIS DE CORES
+   ========================= */
+
+:root {
+    --verde-floresta: #228B22;
+    --azul-ceu: #1E90FF;
+    --amarelo-sol: #FFD700;
+    --cinza-pedra: #696969;
+    --branco-neve: #FFFFFF;
+}
+
+
+/* =========================
+   PÁGINA PRINCIPAL
+   ========================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--azul-ceu);
+    color: var(--branco-neve);
+}
+
