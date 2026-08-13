@@ -1,1 +1,38 @@
-<p>atleta-component works!</p>
+<section id="form">
+    <h2>Cadastro de Atleta</h2>
+
+    <form action="" id="atlteta">
+
+        <label for="nome">Nome Completo</label>
+        <input type="text" name="nome" id="nome" class="input1" maxlength="60"
+        required placeholder="Digite o nome Completo">
+
+        <label for="cpf">CPF*</label>
+        <input type="text" name="cpf" id="cpf" class="input2" maxlength="14"
+        required placeholder="Digite o CPF">
+
+        <label for="sexo">Sexo</label>
+        <input type="radio" name="sexo" id="masculino" value="Masculino">
+        <label for="masculino">Masculino</label>
+
+        <input type="radio" name="sexo" id="feminino" value="Feminino">
+        <label for="feminino">Feminino</label>
+
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" id="cep" class="input2" maxlength="9"
+        required placeholder="Digite o CEP">
+
+        <label for="rua">Rua/Logradouro</label>
+        <input type="text" name="rua" id="rua" class="input1" maxlength="100"
+        required placeholder="Digite a Rua/Logradouro">
+
+        <div id="div-btns">
+
+            <button type="submit" id="btnAdd">Cadastrar</button>
+
+            <button type="reset" id="btnLimpar">Limpar</button>
+
+        </div>
+
+    </form>
+</section>
