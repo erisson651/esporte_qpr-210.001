@@ -1,7 +1,7 @@
 <section id="form">
     <h2>Cadastro de Atleta</h2>
 
-    <form id="atleta" (submit)="salvar()">
+    <form id="corrida" (submit)=>
 
         <label for="nome">Nome Completo</label>
         <input 
@@ -27,12 +27,12 @@
             [(ngModel)]="cpf"
         >
 
-        <label for="sexo">Sexo</label>
+        <label for="categoria">categoria</label>
 
         <input 
             type="radio" 
-            name="sexo" 
-            [(ngModel)]="sexo"
+            name="categoria" 
+            [(ngModel)]="categoria"
             id="masculino" 
             value="Masculino"
         >
@@ -40,50 +40,28 @@
 
         <input 
             type="radio" 
-            name="sexo" 
-            [(ngModel)]="sexo"
+            name="categoria" 
+            [(ngModel)]="categoria"
             id="feminino" 
             value="Feminino"
         >
         <label for="feminino">Feminino</label>
 
+        <label for="distancia">Distância</label>
 
-        <label for="cep">CEP</label>
-        <input 
-            type="text" 
-            name="cep" 
-            id="cep" 
-            class="input2" 
-            maxlength="9"
-            required 
-            placeholder="Digite o CEP"
-            [(ngModel)]="cep"
-        >
-
-
-        <label for="rua">Rua/Logradouro</label>
-        <input 
-            type="text" 
-            name="rua" 
-            id="rua" 
-            class="input1" 
-            maxlength="100"
-            required 
-            placeholder="Digite a Rua/Logradouro"
-            [(ngModel)]="rua"
-        >
+<select name="distancia" id="distancia" [(ngModel)]="distancia">
+    <option value="">Selecione a distância</option>
+    <option value="5km">5 km</option>
+    <option value="10km">10 km</option>
+    <option value="15km">15 km</option>
+    <option value="20km">20 km</option>
+    <option value="30km">30 km</option>
+    <option value="40km">40 km</option>
+    <option value="50km">50 km</option>
+</select>
 
 
-        <label for="bairro">Bairro</label>
-        <input 
-            type="text" 
-            name="bairro" 
-            id="bairro" 
-            class="input1" 
-            maxlength="100"
-            required 
-            placeholder="Digite o Bairro"
-            [(ngModel)]="bairro"
+    
         >
 
 
