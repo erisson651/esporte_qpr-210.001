@@ -12,6 +12,7 @@
             maxlength="60"
             required 
             placeholder="Digite o nome Completo"
+            [(ngModel)]="nome"
         >
 
         <label for="cpf">CPF*</label>
@@ -23,6 +24,7 @@
             maxlength="14"
             required 
             placeholder="Digite o CPF"
+            [(ngModel)]="cpf"
         >
 
         <label for="sexo">Sexo</label>
@@ -30,6 +32,7 @@
         <input 
             type="radio" 
             name="sexo" 
+            [(ngModel)]="sexo"
             id="masculino" 
             value="Masculino"
         >
@@ -38,6 +41,7 @@
         <input 
             type="radio" 
             name="sexo" 
+            [(ngModel)]="sexo"
             id="feminino" 
             value="Feminino"
         >
@@ -53,6 +57,7 @@
             maxlength="9"
             required 
             placeholder="Digite o CEP"
+            [(ngModel)]="cep"
         >
 
 
@@ -65,6 +70,7 @@
             maxlength="100"
             required 
             placeholder="Digite a Rua/Logradouro"
+            [(ngModel)]="rua"
         >
 
 
@@ -77,6 +83,7 @@
             maxlength="100"
             required 
             placeholder="Digite o Bairro"
+            [(ngModel)]="bairro"
         >
 
 
@@ -89,6 +96,7 @@
             maxlength="100"
             required 
             placeholder="Digite a Cidade"
+            [(ngModel)]="cidade"
         >
 
 
@@ -101,6 +109,7 @@
             maxlength="2"
             required 
             placeholder="Digite a UF"
+            [(ngModel)]="uf"
         >
 
 
@@ -116,5 +125,5 @@
 
         </div>
 
-    </form>
+    </form> 
 </section>
