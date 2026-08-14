@@ -7,16 +7,16 @@ import { HomeComponent } from './component/home-component/home-component';
 export const routes: Routes = [
     {
        path:"",
-       redirectTo:"/home",
+       redirectTo:"home",
        pathMatch:"full"
     },
     {
         path: "home",
-        Component:HomeComponent
+        component:HomeComponent
     },
     {
-        path:"cadastroAtlteta",
-        Component: AtletaComponent
+        path:"cadastroAtleta",
+        component:AtletaComponent
     }
 
 ];
