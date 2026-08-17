@@ -1,32 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Atleta } from '../models/atleta';
-import { CorridaComponent } from '../component/corrida-component/corrida-component';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
-
 export class AtletaService {
 
-    // Declaração de arrays
-    private atletas: Atleta[] = [];
+    atletas: Atleta[] = [];
 
-    // Declaração de funções de manipulação do array
+    constructor(private http: HttpClient) {}
 
-    // Adicionando elemento
-    adicionarAtleta(atleta: Atleta) {
-        //armenngue para gerar id
-        atleta.id =this.atletas.length +1
-        this.atletas.push(atleta);
+    // Adicionar atleta
+    adicionarAtleta(atleta: Atleta): Observable<Atleta> {
+        const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/`;
+
+        return this.http.post<Atleta>(urlApi, atleta);
     }
 
+    // Listar atletas
+    listarAtletas(): Observable<Atleta[]> {
+        const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/`;
 
-
-    // Listar elementos
-    listarAtletas() {
-        console.table(this.atletas);
-
-        return this.atletas;
+        return this.http.get<Atleta[]>(urlApi);
     }
 
     // Remover elemento pelo ID
