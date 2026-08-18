@@ -52,22 +52,27 @@ export class AtletaComponent {
 
   salvar() {
 
-    const atleta = new Atleta();
+    let atleta = new Atleta();
 
-    atleta.nome = this.nome;
-    atleta.cpf = this.cpf;
-    atleta.sexo = this.sexo;
-    atleta.cep = this.cep;
-    atleta.rua = this.rua;
-    atleta.bairro = this.bairro;
-    atleta.cidade = this.cidade;
-    atleta.uf = this.uf;
-
-    this.atletaService.adicionarAtleta(atleta);
-
-    this.limparDados();
+    atleta.nomeAtleta = this.nome;
+atleta.cpfAtleta = this.cpf;
+atleta.sexoAtleta = this.sexo;
+atleta.cepAtleta = this.cep;
+atleta.ruaAtleta = this.rua;
+atleta.bairroAtleta = this.bairro;
+atleta.cidadeAtleta = this.cidade;
+atleta.ufAtleta = this.uf;
+    this.atletaService.adicionarAtleta(atleta)
+      .subscribe({
+        next: (resposta) => {
+          console.log(resposta);
+          this.limparDados();
+        },
+        error: (msgErro) => {
+          console.log(msgErro);
+        }
+      });
 
     this.atletaService.listarAtletas();
   }
 }
-

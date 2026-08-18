@@ -29,25 +29,29 @@ export class AtletaService {
     // Remover elemento pelo ID
     removerElemento(idAtleta: number) {
         this.atletas = this.atletas.filter(
-            elem => elem.id !== idAtleta
+            elem => elem.idAtleta !== idAtleta
         );
     }
 
     // Remover elemento 2
     removerElemento2(atleta: Atleta) {
         let posArray = this.atletas.findIndex(
-            elem => elem.id === atleta.id
+            elem => elem.idAtleta === atleta.idAtleta
         );
 
-        this.atletas.splice(posArray, 1);
+        if (posArray !== -1) {
+            this.atletas.splice(posArray, 1);
+        }
     }
 
     // Alterando elemento do array
     alterarElemento(atleta: Atleta) {
         let posArray = this.atletas.findIndex(
-            elem => elem.id === atleta.id
+            elem => elem.idAtleta === atleta.idAtleta
         );
 
-        this.atletas[posArray] = atleta;
+        if (posArray !== -1) {
+            this.atletas[posArray] = atleta;
+        }
     }
 }
