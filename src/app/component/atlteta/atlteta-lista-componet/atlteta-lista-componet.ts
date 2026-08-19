@@ -31,13 +31,13 @@ export class AtltetaListaComponent {
 
           this.listaAtletas.set(
             [...dadosAtletas].sort((a, b) =>
-              a.nome.localeCompare(b.nome)
+              a.nomeAtleta.localeCompare(b.nomeAtleta)
             )
           );
 
         },
 
-        error: (msgErro) => {
+        error: (msgErro: any) => {
           console.log("Erro ao listar Atletas", msgErro);
         }
 
@@ -52,12 +52,12 @@ export class AtltetaListaComponent {
       this.atletaService.excluirAtleta(id)
         .subscribe({
 
-          next: (resposta) => {
+          next: (resposta: any) => {
             console.log("Excluido com Sucesso!!!", resposta);
             this.listar();
           },
 
-          error: (msgErro) => {
+          error: (msgErro: any) => {
             console.log("Erro ao excluir Atleta", msgErro);
           }
 
@@ -69,7 +69,7 @@ export class AtltetaListaComponent {
 
   caregaDadosAtletasForm(atleta: Atleta) {
 
-    this.router.navigate(['/cadastroAtleta', atleta.id]);
+    this.router.navigate(['/cadastroAtleta', atleta.idAtleta]);
 
   }
 

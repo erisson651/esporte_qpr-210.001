@@ -26,6 +26,27 @@ export class AtletaService {
         return this.http.get<Atleta[]>(urlApi);
     }
 
+    // Buscar um atleta pelo ID
+    buscarAtleta(idAtleta: number): Observable<Atleta> {
+        const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${idAtleta}`;
+
+        return this.http.get<Atleta>(urlApi);
+    }
+
+    // Editar atleta
+    editarAtleta(atleta: Atleta): Observable<Atleta> {
+        const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${atleta.idAtleta}`;
+
+        return this.http.put<Atleta>(urlApi, atleta);
+    }
+
+    // Excluir atleta pelo ID
+    excluirAtleta(idAtleta: number): Observable<any> {
+        const urlApi = `https://6a7f6d923183f5fd884b1a61.mockapi.io/esportearlivre/atleta/${idAtleta}`;
+
+        return this.http.delete<any>(urlApi);
+    }
+
     // Remover elemento pelo ID
     removerElemento(idAtleta: number) {
         this.atletas = this.atletas.filter(
