@@ -13,14 +13,23 @@
             </span>
 
             <span class="span-link-atletas">
-                <a class="link-alterar" (click)="caregaDadosAtletasForm(elem)">A</a>
-                <a class="atleta-link-excluir" (click)="excluir(elem.idAtleta)">E</a>
+                <a class="link-alterar"
+                   (click)="caregaDadosAtletasForm(elem)">
+                    A
+                </a>
+
+                <a class="atleta-link-excluir"
+                   (click)="excluir(elem.idAtleta)">
+                    E
+                </a>
             </span>
 
         </div>
     } @empty {
+
         <div class="div-item-pessoa">
             NENHUM REGISTRO NA LISTA
         </div>
+
     }
 </section>
