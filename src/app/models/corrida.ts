@@ -2,16 +2,12 @@ export class Corrida {
 
     idCorrida: number = 0;
 
-    nome: string = '';
+    nomeCorrida: string = '';
 
-    cpf: string = '';
+    dataCorrida: string = '';
 
-    categoria: string = '';
+    distanciaCorrida: string = '';
 
-    distancia: string = '';
-
-    cidade: string = '';
-
-    uf: string = '';
+    localCorrida: string = '';
 
 }
