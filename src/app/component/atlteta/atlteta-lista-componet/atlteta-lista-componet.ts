@@ -29,7 +29,7 @@ export class AtltetaListaComponent {
 
         next: (dadosAtletas) => {
 
-          console.log('Dados recebidos da API:', dadosAtletas);
+          console.log('Atletas recebidos:', dadosAtletas);
 
           this.listaAtletas.set(
             [...dadosAtletas].sort((a, b) =>
@@ -39,36 +39,50 @@ export class AtltetaListaComponent {
 
         },
 
-        error: (msgErro: any) => {
-          console.log('Erro ao listar Atletas:', msgErro);
+        error: (msgErro) => {
+          console.log('Erro ao listar atletas:', msgErro);
         }
 
       });
 
   }
 
+  // EDITAR
+  caregaDadosAtletasForm(atleta: Atleta) {
+
+    console.log('Atleta selecionado para editar:', atleta);
+
+    this.router.navigate([
+      '/cadastroAtleta',
+      atleta.idAtleta
+    ]);
+
+  }
+
+  // EXCLUIR
   excluir(idAtleta: number) {
 
-    if (confirm('Deseja Excluir o Atleta?')) {
+    if (confirm('Deseja realmente excluir este atleta?')) {
 
       this.atletaService.excluirAtleta(idAtleta)
         .subscribe({
 
-          next: (resposta: any) => {
+          next: (resposta) => {
 
             console.log(
-              'Excluído com Sucesso!!!',
+              'Atleta excluído com sucesso!',
               resposta
             );
 
+            // Atualiza a lista depois de excluir
             this.listar();
 
           },
 
-          error: (msgErro: any) => {
+          error: (msgErro) => {
 
             console.log(
-              'Erro ao excluir Atleta:',
+              'Erro ao excluir atleta:',
               msgErro
             );
 
@@ -77,15 +91,6 @@ export class AtltetaListaComponent {
         });
 
     }
-
-  }
-
-  caregaDadosAtletasForm(atleta: Atleta) {
-
-    this.router.navigate([
-      '/cadastroAtleta',
-      atleta.idAtleta
-    ]);
 
   }
 

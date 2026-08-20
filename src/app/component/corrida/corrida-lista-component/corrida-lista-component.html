@@ -1,0 +1,33 @@
+<section id="section-lista-corrida">
+
+    <h2>Lista de Corridas</h2>
+
+    @for (elem of listaCorridas(); track elem.idCorrida) {
+
+        <div class="corrida">
+
+            <span class="span-dados-corrida">
+
+                {{ elem.idCorrida }} -
+                {{ elem.nome }} -
+                {{ elem.cpf }} -
+                {{ elem.categoria }} -
+                {{ elem.distancia }} -
+                {{ elem.cidade }} -
+                {{ elem.uf }}
+
+            </span>
+
+        </div>
+
+    } @empty {
+
+        <div class="div-item-corrida">
+
+            NENHUMA CORRIDA CADASTRADA
+
+        </div>
+
+    }
+
+</section>

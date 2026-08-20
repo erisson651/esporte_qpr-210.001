@@ -1,35 +1,64 @@
 <section id="section-lista-atleta">
-    <h2>Lista Atletas</h2>
 
-    @for(elem of listaAtletas(); track elem.idAtleta) {
-        <div class="atleta">
+    <h2>Lista de Atletas</h2>
 
-            <span class="span-dados-atleta">
-                {{elem.idAtleta}} -
-                {{elem.nomeAtleta}} -
-                {{elem.cpfAtleta}} -
-                {{elem.cidadeAtleta}} -
-                {{elem.ufAtleta}}
-            </span>
+    <div id="lista-cards">
 
-            <span class="span-link-atletas">
-                <a class="link-alterar"
-                   (click)="caregaDadosAtletasForm(elem)">
-                    A
-                </a>
+        @for (elem of listaAtletas(); track elem.idAtleta) {
 
-                <a class="atleta-link-excluir"
-                   (click)="excluir(elem.idAtleta)">
-                    E
-                </a>
-            </span>
+            <div class="card-atleta">
 
-        </div>
-    } @empty {
+                <div class="dados-atleta">
 
-        <div class="div-item-pessoa">
-            NENHUM REGISTRO NA LISTA
-        </div>
+                    <h3>{{ elem.nomeAtleta }}</h3>
 
-    }
+                    <p><strong>CPF:</strong> {{ elem.cpfAtleta }}</p>
+
+                    <p><strong>Sexo:</strong> {{ elem.sexoAtleta }}</p>
+
+                    <p><strong>CEP:</strong> {{ elem.cepAtleta }}</p>
+
+                    <p>
+                        <strong>Endereço:</strong>
+                        {{ elem.ruaAtleta }},
+                        {{ elem.bairroAtleta }}
+                    </p>
+
+                    <p>
+                        <strong>Cidade:</strong>
+                        {{ elem.cidadeAtleta }} - {{ elem.ufAtleta }}
+                    </p>
+
+                </div>
+
+                <div class="botoes-atleta">
+
+                    <button
+                        type="button"
+                        class="btn-editar"
+                        (click)="caregaDadosAtletasForm(elem)">
+                        Editar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-excluir"
+                        (click)="excluir(elem.idAtleta)">
+                        Excluir
+                    </button>
+
+                </div>
+
+            </div>
+
+        } @empty {
+
+            <div class="div-item-pessoa">
+                NENHUM ATLETA CADASTRADO
+            </div>
+
+        }
+
+    </div>
+
 </section>

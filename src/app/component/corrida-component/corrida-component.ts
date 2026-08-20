@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CorridaService } from '../../service/corrida-service';
+import { Corrida } from '../../models/corrida';
 
 @Component({
   selector: 'app-corrida-component',
@@ -16,33 +18,42 @@ export class CorridaComponent {
   cidade = '';
   uf = '';
 
-  corridas: any[] = [];
+  constructor(
+    private corridaService: CorridaService
+  ) {}
 
   salvar() {
 
-    const corrida = {
-      nome: this.nome,
-      cpf: this.cpf,
-      categoria: this.categoria,
-      distancia: this.distancia,
-      cidade: this.cidade,
-      uf: this.uf
-    };
+    const corrida = new Corrida();
 
-    this.corridas.push(corrida);
+    corrida.nome = this.nome;
+    corrida.cpf = this.cpf;
+    corrida.categoria = this.categoria;
+    corrida.distancia = this.distancia;
+    corrida.cidade = this.cidade;
+    corrida.uf = this.uf;
 
-    console.log('Corrida cadastrada:', corrida);
+    const resposta =
+      this.corridaService.adicionarCorrida(corrida);
+
+    console.log(
+      'Corrida cadastrada com sucesso!',
+      resposta
+    );
 
     this.limpar();
+
   }
 
   limpar() {
+
     this.nome = '';
     this.cpf = '';
     this.categoria = '';
     this.distancia = '';
     this.cidade = '';
     this.uf = '';
+
   }
 
 }
