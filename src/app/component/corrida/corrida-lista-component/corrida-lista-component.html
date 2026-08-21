@@ -8,13 +8,18 @@
 
             <span class="span-dados-corrida">
 
-                {{ elem.idCorrida }} -
-                {{ elem.nome }} -
-                {{ elem.cpf }} -
-                {{ elem.categoria }} -
-                {{ elem.distancia }} -
-                {{ elem.cidade }} -
-                {{ elem.uf }}
+                {{ elem.nomeCorrida }} -
+                {{ elem.dataCorrida }} -
+                {{ elem.distanciaCorrida }} -
+                {{ elem.localCorrida }}
+
+            </span>
+
+            <span class="span-link-corridas">
+
+                <button type="button">
+                    Inscrever-se
+                </button>
 
             </span>
 
@@ -23,9 +28,7 @@
     } @empty {
 
         <div class="div-item-corrida">
-
             NENHUMA CORRIDA CADASTRADA
-
         </div>
 
     }

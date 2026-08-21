@@ -6,7 +6,7 @@ import { CorridaService } from '../../../service/corrida-service';
   selector: 'app-corrida-lista-component',
   imports: [],
   templateUrl: './corrida-lista-component.html',
-  styleUrl: './corrida-lista-component.css',
+  styleUrl: './corrida-lista-component.css'
 })
 export class CorridaListaComponent {
 
@@ -22,11 +22,11 @@ export class CorridaListaComponent {
 
   listar() {
 
-    const dadosCorridas = this.corridaService.listarCorridas();
+    const corridas = this.corridaService.listarCorridas();
 
     this.listaCorridas.set(
-      [...dadosCorridas].sort((a, b) =>
-        a.nome.localeCompare(b.nome)
+      [...corridas].sort((a, b) =>
+        a.nomeCorrida.localeCompare(b.nomeCorrida)
       )
     );
 
